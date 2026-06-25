@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Lift | Inua Aliye Kando Yako</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        earthCream: '#FDFBF7',
+                        charcoal: '#1E1E1E',
+                        burnishedGold: '#C59B27',
+                        softGold: '#E5C158',
+                        mutedGrey: '#6B6A65'
+                    },
+                    fontFamily: {
+                        serif: ['Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FDFBF7;
+            color: #1E1E1E;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-burnishedGold/20">
+
+    <nav class="sticky top-0 z-50 bg-earthCream/90 backdrop-blur-md border-b border-charcoal/5 px-6 py-4 md:px-12">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="font-serif text-xl md:text-2xl font-bold tracking-tight uppercase">
+                    Project <span class="text-burnishedGold">Lift</span>
+                </span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-medium text-sm uppercase tracking-wider text-charcoal/80">
+                <a href="#mission" class="hover:text-burnishedGold transition-colors">Our Mission</a>
+                <a href="#about" class="hover:text-burnishedGold transition-colors">Who We Are</a>
+                <a href="#support" class="hover:text-burnishedGold transition-colors">How to Support</a>
+            </div>
+            <div>
+                <a href="#support" class="inline-block bg-charcoal text-earthCream text-xs font-semibold uppercase tracking-widest px-5 py-3 hover:bg-burnishedGold transition-all duration-300">
+                    Support Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-[85vh] flex items-center px-6 py-12 md:px-12 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+            
+            <div class="lg:col-span-7 space-y-6 z-10">
+                <div class="inline-flex items-center space-x-2 border border-burnishedGold/30 px-3 py-1 rounded-full bg-burnishedGold/5">
+                    <span class="w-2 h-2 rounded-full bg-burnishedGold animate-pulse"></span>
+                    <span class="text-xs font-semibold tracking-widest uppercase text-burnishedGold">Student-Led Initiative</span>
+                </div>
+                <h1 class="font-serif text-5xl md:text-7xl font-bold text-charcoal leading-[1.1] tracking-tight">
+                    Inua Aliye <br>
+                    <span class="text-burnishedGold italic font-normal">Kando Yako.</span>
+                </h1>
+                <p class="text-mutedGrey text-lg md:text-xl max-w-xl font-light leading-relaxed">
+                    Lifting one another through care, community, and hope. We aim to help the neighbor beside you through collective action and sustainable giving.
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                    <a href="#support" class="bg-burnishedGold text-earthCream text-center font-medium text-sm tracking-wider uppercase px-8 py-4 hover:bg-charcoal transition-all duration-300 shadow-md">
+                        Hope Begins With You
+                    </a>
+                    <a href="#about" class="border border-charcoal/20 text-center font-medium text-sm tracking-wider uppercase px-8 py-4 hover:border-charcoal hover:bg-charcoal/5 transition-all">
+                        Read Our Story
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 relative mt-6 lg:mt-0">
+                <div class="absolute -top-6 -left-6 w-32 h-32 bg-burnishedGold/10 -z-10 rounded-bl-3xl"></div>
+                
+                <div class="border-[12px] border-white shadow-xl relative group overflow-hidden bg-charcoal/5 min-h-[450px] flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=1000" alt="Project Lift Donation Drive" class="w-full h-full object-cover absolute inset-0 filter grayscale-[20%] group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute bottom-4 left-4 bg-charcoal text-earthCream text-xs p-3 font-mono tracking-wider">
+                        // BOOK & SUPPLY DRIVE
+                    </div>
+                </div>
+                
+                <div class="absolute -bottom-6 -right-4 bg-burnishedGold p-6 text-earthCream hidden sm:block max-w-[200px] shadow-lg">
+                    <p class="font-serif italic text-lg leading-tight">"The neighbor beside you."</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr class="border-charcoal/10 max-w-7xl mx-auto">
+
+    <section id="mission" class="py-20 px-6 md:px-12 max-w-5xl mx-auto text-center space-y-6">
+        <span class="text-xs font-semibold tracking-widest uppercase text-burnishedGold block">01 / THE CORE MISSION</span>
+        <h2 class="font-serif text-3xl md:text-5xl font-medium tracking-tight text-charcoal max-w-3xl mx-auto leading-snug">
+            "By spreading the word you become a <span class="italic underline decoration-burnishedGold underline-offset-8">beacon of hope</span> that inspires transformation."
+        </h2>
+    </section>
+
+    <section id="about" class="bg-charcoal text-earthCream py-20 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 space-y-4">
+                <span class="text-xs font-semibold tracking-widest uppercase text-softGold block">02 / ABOUT US</span>
+                <h3 class="font-serif text-4xl font-bold tracking-tight">Who We Are</h3>
+                <div class="w-16 h-[2px] bg-softGold"></div>
+            </div>
+            <div class="lg:col-span-7">
+                <p class="text-earthCream/80 text-lg font-light leading-relaxed max-w-2xl">
+                    Project Lift is a student-led initiative focused on helping our less fortunate peers through donation drives, support programs, and sustainable giving. We bring together communities to share clothing, supplies, and everyday essentials with those who need them most — while promoting kindness, unity, and impact.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="support" class="py-24 px-6 md:px-12 max-w-7xl mx-auto space-y-12">
+        <div class="text-center space-y-3">
+            <span class="text-xs font-semibold tracking-widest uppercase text-burnishedGold block">03 / MAKING THE DIFFERENCE</span>
+            <h2 class="font-serif text-4xl font-bold tracking-tight text-charcoal">How You Can Support</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="border border-charcoal/10 p-8 flex flex-col justify-between hover:border-burnishedGold transition-colors duration-300 group bg-white">
+                <div class="space-y-4">
+                    <div class="text-xs font-mono text-mutedGrey tracking-widest uppercase">/ ACTION 01</div>
+                    <h4 class="font-serif text-2xl font-bold text-charcoal group-hover:text-burnishedGold transition-colors">Direct Impact</h4>
+                    <p class="text-mutedGrey font-light leading-relaxed text-sm">
+                        Through donating to the Lift Movement, Project Lift is able to lift a child and give them a fair chance in the world. Every single contribution shifts a trajectory.
+                    </p>
+                </div>
+            </div>
+
+            <div class="border border-charcoal/10 p-8 flex flex-col justify-between hover:border-burnishedGold transition-colors duration-300 group bg-white">
+                <div class="space-y-4">
+                    <div class="text-xs font-mono text-mutedGrey tracking-widest uppercase">/ ACTION 02</div>
+                    <h4 class="font-serif text-2xl font-bold text-charcoal group-hover:text-burnishedGold transition-colors">Advocacy</h4>
+                    <p class="text-mutedGrey font-light leading-relaxed text-sm">
+                        By spreading the word you become a beacon of hope that inspires transformation. Your voice is the primary tool of inspiration to expand this ecosystem of care.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-charcoal text-earthCream p-8 relative overflow-hidden flex flex-col justify-between shadow-xl border-t-4 border-burnishedGold">
+                <div class="space-y-6">
+                    <div class="flex justify-between items-center border-b border-earthCream/10 pb-3">
+                        <span class="text-xs font-mono tracking-widest uppercase text-softGold"> MOBILE PAY</span>
+                        <span class="bg-softGold/20 text-softGold text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded">M-Pesa</span>
+                    </div>
+                    
+                    <h4 class="font-serif text-2xl font-bold">Financial Support</h4>
+                    
+                    <div class="space-y-3 font-mono text-xs text-earthCream/90 pt-2">
+                        <div class="flex justify-between border-b border-earthCream/5 pb-2">
+                            <span class="text-earthCream/50">PAYBILL:</span>
+                            <span class="font-bold text-sm tracking-wider text-softGold">891300</span>
+                        </div>
+                        <div class="flex justify-between border-b border-earthCream/5 pb-2">
+                            <span class="text-earthCream/50">ACCOUNT:</span>
+                            <span class="font-bold text-sm tracking-wider text-softGold">142977</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-6 text-[11px] font-light text-earthCream/40 leading-tight">
+                    *Verify details on your device before finalizing transactions.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="border-t border-charcoal/5 bg-white py-12 px-6 md:px-12 text-center text-xs text-mutedGrey font-mono uppercase tracking-widest">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div>&copy; 2026 Project Lift. All Rights Reserved.</div>
+            <div>Inua Aliye Kando Yako</div>
+        </div>
+    </footer>
+
+</body>
+</html>
