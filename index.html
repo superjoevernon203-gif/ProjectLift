@@ -236,36 +236,59 @@ Contact Us
             Whether you'd like to volunteer, partner with us, donate,
             or simply ask a question, we're happy to help.
         </p>
+<!-- SUCCESS MESSAGE (hidden by default) -->
+<div id="successMessage" class="hidden text-center py-8 space-y-4">
+    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+        <i class="fas fa-check text-2xl text-green-600"></i>
+    </div>
+    <h3 class="text-2xl font-serif text-[#3B1C24]">Message Sent!</h3>
+    <p class="text-gray-500">Thanks for reaching out. We'll get back to you soon.</p>
+    <button id="closeAfterSuccess"
+        class="mt-4 bg-[#D4A437] hover:bg-[#BE922C] text-white px-8 py-3 rounded-xl font-semibold transition">
+        Close
+    </button>
+</div>
 
-        <form class="space-y-6">
+<!-- FORM — replace YOUR_FORM_ID with your ID from formspree.io -->
+<form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
 
-            <input
-                type="text"
-                placeholder="Full Name"
-                class="w-full border rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-[#D4A437]">
+    <input
+        type="text"
+        name="name"
+        placeholder="Full Name"
+        required
+        class="w-full border rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-[#D4A437]">
 
-            <input
-                type="email"
-                placeholder="Email Address"
-                class="w-full border rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-[#D4A437]">
+    <input
+        type="email"
+        name="email"
+        placeholder="Email Address"
+        required
+        class="w-full border rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-[#D4A437]">
 
-            <input
-                type="text"
-                placeholder="Subject"
-                class="w-full border rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-[#D4A437]">
+    <input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+        required
+        class="w-full border rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-[#D4A437]">
 
-            <textarea
-                rows="6"
-                placeholder="Your Message..."
-                class="w-full border rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-[#D4A437]"></textarea>
+    <textarea
+        name="message"
+        rows="6"
+        placeholder="Your Message..."
+        required
+        class="w-full border rounded-xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-[#D4A437]"></textarea>
 
-            <button
-                type="submit"
-                class="w-full bg-[#D4A437] hover:bg-[#BE922C] text-white py-4 rounded-xl font-semibold transition duration-300">
-                Send Message
-            </button>
+    <button
+        type="submit"
+        id="submitBtn"
+        class="w-full bg-[#D4A437] hover:bg-[#BE922C] text-white py-4 rounded-xl font-semibold transition duration-300">
+        Send Message
+    </button>
 
-        </form>
+</form>
+      
 
     </div>
 
@@ -367,24 +390,56 @@ Contact Us
         </div>    
     </footer>
     <script>
+    const modal = document.getElementById("contactModal");
+    const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("successMessage");
+    const submitBtn = document.getElementById("submitBtn");
 
-const modal = document.getElementById("contactModal");
+    document.getElementById("openContact").onclick = () => {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+    };
 
-document.getElementById("openContact").onclick = () => {
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
-};
+    function closeModal() {
+        modal.classList.remove("flex");
+        modal.classList.add("hidden");
+        setTimeout(() => {
+            form.classList.remove("hidden");
+            successMessage.classList.add("hidden");
+            form.reset();
+        }, 300);
+    }
 
-document.getElementById("closeContact").onclick = () => {
-    modal.classList.remove("flex");
-    modal.classList.add("hidden");
-};
+    document.getElementById("closeContact").onclick = closeModal;
+    document.getElementById("closeBackground").onclick = closeModal;
+    document.getElementById("closeAfterSuccess").onclick = closeModal;
 
-document.getElementById("closeBackground").onclick = () => {
-    modal.classList.remove("flex");
-    modal.classList.add("hidden");
-};
+    form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+        submitBtn.textContent = "Sending...";
+        submitBtn.disabled = true;
 
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: { "Accept": "application/json" }
+            });
+
+            if (response.ok) {
+                form.classList.add("hidden");
+                successMessage.classList.remove("hidden");
+            } else {
+                alert("Something went wrong. Please email us at projectlift426@gmail.com");
+                submitBtn.textContent = "Send Message";
+                submitBtn.disabled = false;
+            }
+        } catch (error) {
+            alert("Network error. Please check your connection and try again.");
+            submitBtn.textContent = "Send Message";
+            submitBtn.disabled = false;
+        }
+    });
 </script>
 
 </body>
